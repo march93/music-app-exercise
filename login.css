@@ -1,0 +1,17 @@
+.login-body h1 {
+    text-align: center;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.login-form label {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.login-form input {
+    border: 1px solid black;
+    padding: 4px;
+}

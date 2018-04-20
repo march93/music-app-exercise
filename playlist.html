@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 1</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="playlist.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+  	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close">&times;</button>
+	        <p class="modal-title">Choose Playlist</p>
+	      </div>
+	      <div class="modal-body">
+          <!-- List of playlists -->
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+    <div class="container">
+      <header class="header">
+        <nav>
+          <ul class="nav nav-tabs row">
+
+            <li class="col-xs-4">
+            	<a href="#" class="nav-tabs-a">
+            		<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+            		<span class="nav-tabs-label">Library</span>
+            	</a>
+            </li>
+
+            <li class="col-xs-4">
+            	<a href="#" class="nav-tabs-a">
+            		<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            		<span class="nav-tabs-label">Playlists</span>
+            	</a>
+            </li>
+
+            <li class="col-xs-4">
+            	<a href="#" class="nav-tabs-a">
+            		<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            		<span class="nav-tabs-label">Search</span>
+            	</a>
+            </li>
+
+          </ul>
+        </nav>
+      </header>
+
+      <section class="all-songs">
+
+      	<h2 class="heading">Songs</h2>
+
+      	<div class="all-songs-sort">
+      		<button id="artist-sort" class="btn">Sort by artist</button>
+      		<button id="title-sort" class="btn">Sort by title</button>
+      	</div>
+
+      	<div id="songs-click" class="row">
+      		<!-- List of songs -->
+      	</div>
+
+      </section>
+
+      <section class="playlists hidden">
+
+        <div class="playlist-form">
+          <button type="button" class="playlist-close-form">X</button>
+          Enter playlist name: <input type="text" class="playlist-form-text">
+          <br />
+          <input class="playlist-form-submit" type="submit" value="Submit">
+        </div> 
+
+      	<h2 class="heading">Playlists</h2>
+
+      	<div class="playlists-add-btn">
+      		<button class="btn btn-primary btn-block playlist-btn-add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Playlist</button>
+      	</div>
+
+        <div id="playlist-click" class="row">
+
+        	<!-- List of playlists -->
+
+        	<!--<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">My Mixtape</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+				<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Lil Wayne's Guitar Solos</div>
+				<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+          	<div class="playlists-category">
+          		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">90's Mega Mix</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+          	</div>
+
+          	<div class="playlists-category">
+          		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Smooth Jazz</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Electronic</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Chill</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Not Studying</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">2000's Mix</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Fav's</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>
+
+        	<div class="playlists-category">
+        		<span class="glyphicon glyphicon-usd playlists-category-icon" aria-hidden="true"></span>
+            	<div class="playlists-category-title">Relaxing Poolside</div>
+            	<span class="glyphicon glyphicon-chevron-right playlists-category-right" aria-hidden="true"></span>
+        	</div>-->
+
+        </div>
+
+      </section>
+
+      <section class="playlist-songs hidden">
+
+        <h2 class="heading">Search</h2>        
+
+      	<p class="playlist-songs-heading"></p>
+
+        <div class="playlists-add-user">
+      		<button class="btn btn-primary btn-block playlist-user-add" onclick="displayUserModal()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> User</button>
+      	</div>
+
+      	<div id="playlist-song-click" class="row">
+      		<!-- List of songs -->
+    	</div>
+
+      </section>
+
+      <section class="search-page hidden">
+
+      	<h2 class="heading">Search</h2>
+
+      	<input class="search-input" type="text" placeholder="Search">
+
+      	<div id="search-playlist" class="row">
+      		<!-- List of playlists -->
+      	</div>
+
+      	<div id="search-songs" class="row">
+      		<!-- List of songs -->
+      	</div>
+
+      </section>
+
+    </div>
+    <script src="music-data.js"></script>
+  </body>
+</html>
