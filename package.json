@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
-    "bluebird": "^3.5.0",
-    "body-parser": "^1.16.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "crypto": "0.0.3",
-    "express": "^4.14.1",
+    "express": "^4.16.3",
     "mu2": "^0.5.21",
-    "sequelize": "^3.30.2",
-    "sqlite3": "^3.1.8"
+    "sequelize": "^3.32.1",
+    "sqlite3": "^3.1.13"
   }
 }
