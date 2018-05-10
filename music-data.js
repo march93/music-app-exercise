@@ -108,12 +108,13 @@ var songsGenerate = document.getElementById("songs-click");
 var generateSongs = '';
 
 var getSongs = function() {
+    generateSongs = '';
 	for (i = 0; i < window.MUSIC_DATA.songs.length; i++) {
 		songTitle = window.MUSIC_DATA.songs[i].title;
 		songArtist = window.MUSIC_DATA.songs[i].artist;
-		songID = window.MUSIC_DATA.songs[i].id;
+        songID = window.MUSIC_DATA.songs[i].id;
 		generateSongs += '<div class="playlists-category-songs" onclick="songActions(event, ' + songID + ')"><span class="glyphicon glyphicon-picture playlists-songs-icon" aria-hidden="true"></span><div class="playlists-song-info"><span class="playlists-song-title">' + songTitle + '</span><span class="playlists-song-artist">' + songArtist + '</span></div><div class="all-songs-play"><span class="glyphicon glyphicon-play all-songs-list song-play" aria-hidden="true"></span><span class="glyphicon glyphicon-plus-sign all-songs-list song-add" aria-hidden="true"></span></div></div></div>';
-	}
+    }
 	songsGenerate.innerHTML = generateSongs;
 }
 
@@ -226,7 +227,6 @@ if (window.location.href.indexOf('/playlists') > -1) {
 // SORT BY ARTIST
 var artistSort = document.querySelector("#artist-sort");
 artistSort.className = "btn all-songs-sort-pressed";
-artistSort.addEventListener("click", sortByArtist, false);
 
 var sortByArtist = function() {
 	artistSort.className = "btn all-songs-sort-pressed";
@@ -236,10 +236,10 @@ var sortByArtist = function() {
 	songsGenerate.innerHTML = '';
 	getSongs();
 }
+artistSort.addEventListener("click", sortByArtist, false);
 
 // SORT BY TITLE
 var titleSort = document.querySelector("#title-sort");
-titleSort.addEventListener("click", sortByTitle, false);
 
 var sortByTitle = function() {
 	titleSort.className = "btn all-songs-sort-pressed";
@@ -249,6 +249,7 @@ var sortByTitle = function() {
 	songsGenerate.innerHTML = '';
 	getSongs();
 }
+titleSort.addEventListener("click", sortByTitle, false);
 
 // ADD SONG TO PLAYLIST
 var addSongID;
